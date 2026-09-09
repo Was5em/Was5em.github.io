@@ -3,370 +3,268 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wasim Osama Amer — Data Scientist</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Wassem Osama Amer — AI Automation Engineer &amp; Data Scientist</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 
 :root{
-  --cream: #F8F5F0;
-  --cream2: #F0EBE3;
-  --gold: #C9A96E;
-  --gold-light: #E8D5B0;
-  --gold-dark: #A07840;
-  --ink: #1A1410;
-  --ink2: #3D2F20;
-  --muted: #8C7B6B;
-  --border: rgba(201,169,110,0.2);
-  --border2: rgba(201,169,110,0.4);
-}
-
-[data-theme="dark"]{
-  --cream: #12100E;
-  --cream2: #1C1814;
-  --gold: #C9A96E;
-  --gold-light: #4A3820;
-  --gold-dark: #D4A85A;
-  --ink: #F0EBE3;
-  --ink2: #D9CEBF;
-  --muted: #9E8E7A;
-  --border: rgba(201,169,110,0.15);
-  --border2: rgba(201,169,110,0.3);
+  --bg: #0B0D0A;
+  --panel: #12150F;
+  --panel2: #171B13;
+  --amber: #E8A33D;
+  --amber-bright: #FFC670;
+  --amber-dim: rgba(232,163,61,0.28);
+  --green: #6FCF97;
+  --text: #EDEBE1;
+  --text-dim: #8D9288;
+  --text-dim2: #5C6157;
+  --line: rgba(232,163,61,0.14);
+  --line2: rgba(232,163,61,0.32);
 }
 
 html{scroll-behavior:smooth;}
 
 body{
-  background: var(--cream);
-  color: var(--ink);
-  font-family: 'Inter', sans-serif;
+  background:
+    linear-gradient(rgba(232,163,61,0.025) 1px, transparent 1px) 0 0/100% 42px,
+    var(--bg);
+  color: var(--text);
+  font-family: 'Space Grotesk', sans-serif;
   font-weight: 300;
   line-height: 1.7;
   overflow-x: hidden;
 }
 
-/* ORNAMENT */
-.ornament{
-  display: block; text-align: center;
-  color: var(--gold); font-size: 1.1rem;
-  letter-spacing: 0.4em; margin: 0.5rem 0;
-  opacity: 0.7;
-}
+.mono{ font-family: 'IBM Plex Mono', monospace; }
 
 /* NAV */
 nav{
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(248,245,240,0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border2);
-  padding: 0 4rem;
+  background: rgba(11,13,10,0.88);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  padding: 0 3rem;
   display: flex; align-items: center; justify-content: space-between;
-  height: 64px;
+  height: 60px;
 }
 .nav-logo{
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.3rem; font-weight: 500;
-  color: var(--ink); letter-spacing: 0.08em;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.85rem; font-weight: 500;
+  color: var(--text); letter-spacing: 0.02em;
 }
-.nav-logo span{ color: var(--gold); }
-.nav-links{ display: flex; gap: 2.5rem; }
+.nav-logo span{ color: var(--amber); }
+.nav-links{ display: flex; gap: 2.2rem; }
 .nav-links a{
-  color: var(--muted); text-decoration: none;
-  font-size: 0.78rem; letter-spacing: 0.12em;
-  text-transform: uppercase; font-weight: 400;
-  transition: color 0.3s;
+  color: var(--text-dim); text-decoration: none;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem; letter-spacing: 0.02em;
+  transition: color 0.2s;
 }
-.nav-links a:hover{ color: var(--ink); }
-.nav-cta{
-  font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
-  font-weight: 400; color: var(--gold-dark); text-decoration: none;
-  border-bottom: 1px solid var(--gold); padding-bottom: 1px;
-  transition: color 0.3s;
+.nav-links a::before{ content: '/'; color: var(--text-dim2); margin-right: 0.3rem; }
+.nav-links a:hover{ color: var(--amber); }
+.nav-status{
+  display: flex; align-items: center; gap: 0.5rem;
+  font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem;
+  color: var(--green);
 }
-.nav-cta:hover{ color: var(--ink); }
+.status-dot{
+  width: 6px; height: 6px; border-radius: 50%; background: var(--green);
+  box-shadow: 0 0 6px var(--green);
+  animation: blink 2.4s ease-in-out infinite;
+}
+@keyframes blink{ 0%,100%{ opacity: 1; } 50%{ opacity: 0.35; } }
 
 /* HERO */
 .hero{
   min-height: 100vh;
-  display: flex; align-items: center; justify-content: center;
-  padding: 7rem 2rem 5rem;
-  background:
-    radial-gradient(ellipse 60% 50% at 50% 0%, rgba(201,169,110,0.08) 0%, transparent 60%),
-    var(--cream);
-  text-align: center;
-  position: relative;
+  display: flex; align-items: center;
+  padding: 8rem 3rem 4rem;
+  max-width: 1100px; margin: 0 auto;
+  gap: 4rem;
 }
-.hero::after{
-  content: '';
-  position: absolute; bottom: 0; left: 10%; right: 10%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-}
-.hero-eyebrow{
-  font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase;
-  color: var(--gold); font-weight: 400; margin-bottom: 1.5rem;
+.hero-left{ flex: 1; }
+.hero-tag{
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem; color: var(--amber); letter-spacing: 0.02em;
+  margin-bottom: 1.2rem;
 }
 .hero h1{
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(3.5rem, 9vw, 7rem);
-  font-weight: 300; line-height: 1.0;
-  color: var(--ink); margin-bottom: 1rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
+  font-weight: 600; line-height: 1.05;
+  color: var(--text); margin-bottom: 1.3rem;
   letter-spacing: -0.01em;
 }
-.hero h1 em{
-  font-style: italic; color: var(--gold-dark);
-}
-.hero-title{
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1rem, 2.5vw, 1.4rem);
-  font-weight: 400; color: var(--muted);
-  letter-spacing: 0.2em; text-transform: uppercase;
-  margin-bottom: 2rem;
-}
+.hero h1 .accent{ color: var(--amber); }
 .hero-desc{
-  max-width: 520px; margin: 0 auto 3rem;
-  color: var(--muted); font-size: 0.95rem; line-height: 1.8;
+  max-width: 480px; color: var(--text-dim); font-size: 0.95rem;
+  line-height: 1.85; margin-bottom: 2.2rem;
 }
-.hero-btns{ display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
-.btn-gold{
-  background: var(--gold-dark); color: var(--cream);
-  border: none; padding: 0.85rem 2.5rem;
-  font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
-  font-weight: 400; font-family: 'Inter', sans-serif;
+.hero-btns{ display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-run{
+  background: var(--amber); color: #0B0D0A;
+  border: none; padding: 0.8rem 1.6rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.78rem; font-weight: 500;
   cursor: pointer; text-decoration: none; display: inline-block;
-  transition: background 0.3s, transform 0.2s;
+  transition: background 0.2s;
 }
-.btn-gold:hover{ background: var(--ink); transform: translateY(-1px); }
-.btn-ghost{
-  background: transparent; color: var(--ink);
-  border: 1px solid rgba(26,20,16,0.25); padding: 0.85rem 2.5rem;
-  font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
-  font-weight: 400; font-family: 'Inter', sans-serif;
+.btn-run:hover{ background: var(--amber-bright); }
+.btn-cmd{
+  background: transparent; color: var(--text);
+  border: 1px solid var(--line2); padding: 0.8rem 1.6rem;
+  font-family: 'IBM Plex Mono', monospace; font-size: 0.78rem;
   cursor: pointer; text-decoration: none; display: inline-block;
-  transition: background 0.3s, border-color 0.3s;
-}
-.btn-ghost:hover{ background: var(--cream2); border-color: var(--gold); }
-
-/* SECTION WRAPPER */
-.section-wrap{ max-width: 1080px; margin: 0 auto; padding: 7rem 2rem; }
-
-.section-eyebrow{
-  font-size: 0.68rem; letter-spacing: 0.35em; text-transform: uppercase;
-  color: var(--gold); font-weight: 400; margin-bottom: 0.75rem;
-  display: flex; align-items: center; gap: 1rem;
-}
-.section-eyebrow::before, .section-eyebrow::after{
-  content: ''; flex: none; width: 30px; height: 1px; background: var(--gold); opacity: 0.5;
-}
-.section-h{
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2rem, 5vw, 3.2rem);
-  font-weight: 300; color: var(--ink); margin-bottom: 0.5rem;
-  line-height: 1.15;
-}
-.section-h em{ font-style: italic; color: var(--gold-dark); }
-.section-sub{
-  color: var(--muted); font-size: 0.88rem;
-  letter-spacing: 0.05em; margin-bottom: 4rem;
-}
-
-/* DIVIDER */
-.divider{
-  border: none; border-top: 1px solid var(--border2);
-  width: 80px; margin: 0;
-}
-
-/* ABOUT */
-.about-grid{ display: grid; grid-template-columns: 1fr 1px 1fr; gap: 0; align-items: start; }
-.about-vline{ background: var(--border2); }
-.about-left{ padding-right: 4rem; }
-.about-right{ padding-left: 4rem; }
-.about-left p, .about-right p{ color: var(--muted); font-size: 0.93rem; margin-bottom: 1.2rem; line-height: 1.9; }
-.stats-row{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 5rem; border-top: 1px solid var(--border2); border-left: 1px solid var(--border2); }
-.stat-item{ padding: 2rem 1.5rem; border-right: 1px solid var(--border2); border-bottom: 1px solid var(--border2); text-align: center; }
-.stat-n{
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 3rem; font-weight: 300; color: var(--gold-dark);
-  line-height: 1;
-}
-.stat-l{ font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-top: 0.4rem; }
-
-/* SKILLS */
-.skills-section{ background: var(--cream2); }
-.skill-row{
-  display: grid; grid-template-columns: 200px 1fr;
-  padding: 1.75rem 0; border-bottom: 1px solid var(--border);
-  gap: 2rem; align-items: start;
-}
-.skill-row:last-child{ border-bottom: none; }
-.skill-cat{
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem; font-weight: 400; color: var(--ink);
-  padding-top: 0.1rem;
-}
-.skill-items{ display: flex; flex-wrap: wrap; gap: 0.5rem; }
-.skill-pill{
-  font-size: 0.73rem; letter-spacing: 0.1em;
-  padding: 0.35rem 0.9rem; border: 1px solid var(--border2);
-  color: var(--ink2); background: var(--cream);
   transition: border-color 0.2s, color 0.2s;
 }
-.skill-pill:hover{ border-color: var(--gold); color: var(--gold-dark); }
+.btn-cmd:hover{ border-color: var(--amber); color: var(--amber); }
 
-/* EXPERIENCE */
-.exp-item{ display: grid; grid-template-columns: 180px 1fr; gap: 3rem; padding: 3rem 0; border-bottom: 1px solid var(--border); }
-.exp-item:last-child{ border-bottom: none; }
-.exp-meta{ text-align: right; }
-.exp-date{ font-size: 0.75rem; letter-spacing: 0.1em; color: var(--gold); text-transform: uppercase; }
-.exp-company{ font-size: 0.82rem; color: var(--muted); margin-top: 0.3rem; }
-.exp-title{
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.5rem; font-weight: 400; color: var(--ink);
-  margin-bottom: 1rem; line-height: 1.2;
+/* TERMINAL WINDOW */
+.terminal{
+  flex: 1; max-width: 440px;
+  background: var(--panel); border: 1px solid var(--line2);
+  font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem;
 }
-.exp-bullets{ list-style: none; }
-.exp-bullets li{
-  font-size: 0.88rem; color: var(--muted); padding: 0.3rem 0;
-  padding-left: 1.2rem; position: relative; line-height: 1.7;
+.term-bar{
+  display: flex; align-items: center; gap: 0.4rem;
+  padding: 0.7rem 1rem; border-bottom: 1px solid var(--line);
 }
-.exp-bullets li::before{
-  content: '–'; position: absolute; left: 0; color: var(--gold);
+.term-dot{ width: 9px; height: 9px; border-radius: 50%; }
+.term-body{ padding: 1.4rem; }
+.term-line{ margin-bottom: 0.9rem; color: var(--text-dim); }
+.term-line .prompt{ color: var(--amber); }
+.term-line .out{ color: var(--text); display: block; margin-top: 0.3rem; padding-left: 1rem; }
+.term-line .ok{ color: var(--green); }
+
+/* SECTION WRAP */
+.section-wrap{ max-width: 1100px; margin: 0 auto; padding: 6rem 3rem; }
+.sec-tag{
+  font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;
+  color: var(--amber); margin-bottom: 0.8rem; letter-spacing: 0.02em;
+}
+.sec-h{
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 600;
+  color: var(--text); margin-bottom: 3.5rem;
+}
+.sec-h span{ color: var(--text-dim2); }
+
+/* ABOUT */
+.about-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+.about-col p{ color: var(--text-dim); font-size: 0.92rem; margin-bottom: 1.2rem; line-height: 1.9; }
+.about-col .log-tag{ font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; color: var(--text-dim2); display: block; margin-bottom: 0.4rem; }
+
+.metrics-row{ display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--line2); border: 1px solid var(--line2); margin-top: 3.5rem; }
+.metric{ background: var(--bg); padding: 1.6rem 1.2rem; }
+.metric-n{ font-family: 'Space Grotesk', sans-serif; font-size: 2.2rem; font-weight: 600; color: var(--amber); }
+.metric-l{ font-family: 'IBM Plex Mono', monospace; font-size: 0.66rem; color: var(--text-dim); margin-top: 0.3rem; letter-spacing: 0.02em; }
+
+/* SKILLS */
+.skills-section{ background: var(--panel); }
+.mod-grid{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line2); border: 1px solid var(--line2); }
+.mod-panel{ background: var(--panel); padding: 1.8rem; }
+.mod-title{
+  font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem;
+  color: var(--amber); margin-bottom: 1rem; letter-spacing: 0.02em;
+}
+.mod-title::before{ content: '// '; color: var(--text-dim2); }
+.tag-row{ display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.tag{
+  font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem;
+  padding: 0.3rem 0.7rem; border: 1px solid var(--line2); color: var(--text-dim);
 }
 
-/* DARK MODE TOGGLE */
-.theme-toggle{
-  background: none; border: 1px solid var(--border2);
-  color: var(--muted); cursor: pointer;
-  width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;
-  font-size: 1rem; transition: border-color 0.3s, color 0.3s; flex-shrink: 0;
+/* EXPERIENCE - pipeline */
+.pipeline{ position: relative; padding-left: 2.5rem; }
+.pipeline::before{
+  content: ''; position: absolute; left: 6px; top: 8px; bottom: 8px; width: 1px;
+  background: linear-gradient(var(--amber), var(--line2));
 }
-.theme-toggle:hover{ border-color: var(--gold); color: var(--gold); }
+.node{ position: relative; padding-bottom: 3.5rem; }
+.node:last-child{ padding-bottom: 0; }
+.node-dot{
+  position: absolute; left: -2.5rem; top: 4px; width: 13px; height: 13px;
+  border-radius: 50%; background: var(--bg); border: 2px solid var(--amber);
+}
+.node-dot.active{ background: var(--amber); box-shadow: 0 0 8px var(--amber); }
+.node-date{ font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: var(--amber); margin-bottom: 0.3rem; }
+.node-company{ font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; color: var(--text-dim2); margin-bottom: 0.6rem; }
+.node-title{ font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; font-weight: 500; margin-bottom: 0.9rem; }
+.node-bullets{ list-style: none; max-width: 640px; }
+.node-bullets li{
+  font-size: 0.88rem; color: var(--text-dim); padding: 0.3rem 0;
+  padding-left: 1.2rem; position: relative; line-height: 1.75;
+}
+.node-bullets li::before{ content: '›'; position: absolute; left: 0; color: var(--amber); }
 
 /* PROJECTS */
-.projects-grid{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; border-left: 1px solid var(--border2); border-top: 1px solid var(--border2); }
-.project-card{
-  border-right: 1px solid var(--border2); border-bottom: 1px solid var(--border2);
-  padding: 2.5rem; transition: background 0.3s;
-  position: relative; overflow: hidden;
+.proj-grid{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line2); border: 1px solid var(--line2); }
+.proj-card{ background: var(--bg); padding: 2rem; display: flex; flex-direction: column; }
+.proj-head{ display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.9rem; gap: 1rem; }
+.proj-title{ font-family: 'Space Grotesk', sans-serif; font-size: 1.15rem; font-weight: 500; }
+.proj-status{
+  font-family: 'IBM Plex Mono', monospace; font-size: 0.62rem; white-space: nowrap;
+  padding: 0.2rem 0.55rem; border: 1px solid var(--green); color: var(--green);
 }
-.project-card::before{
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: var(--gold); transform: scaleX(0); transform-origin: left;
-  transition: transform 0.4s;
-}
-.project-card:hover{ background: var(--cream2); }
-.project-card:hover::before{ transform: scaleX(1); }
+.proj-desc{ font-size: 0.85rem; color: var(--text-dim); line-height: 1.75; margin-bottom: 1.1rem; flex: 1; }
+.proj-metric{ font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; color: var(--amber); margin-bottom: 0.9rem; }
+.proj-techs{ display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.p-tech{ font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; padding: 0.18rem 0.55rem; border: 1px solid var(--line2); color: var(--text-dim); }
 
-/* FEATURED CARD */
-.project-card.featured{
-  grid-column: 1 / -1;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
-  background: linear-gradient(135deg, var(--cream2) 0%, var(--cream) 100%);
-  border-top: 2px solid var(--gold);
+.proj-card.featured{
+  grid-column: 1 / -1; display: grid; grid-template-columns: 1.3fr 1fr; gap: 2.5rem;
+  background: var(--panel); border-top: 2px solid var(--amber);
 }
-.project-card.featured::before{ display: none; }
-.featured-badge{
-  display: inline-block;
-  font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase;
-  color: var(--gold-dark); border: 1px solid var(--gold);
-  padding: 0.2rem 0.7rem; margin-bottom: 1rem;
-}
-.project-card.featured .project-num{ font-size: 5rem; color: var(--gold-light); }
-.project-card.featured h3{ font-size: 1.8rem; }
-.project-card.featured p{ font-size: 0.9rem; }
-.featured-visual{
-  display: flex; align-items: center; justify-content: center;
-  min-height: 180px; border: 1px solid var(--border2);
-  background: var(--cream); position: relative; overflow: hidden;
-}
-.project-num{
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 3.5rem; font-weight: 300;
-  color: var(--border2); line-height: 1;
-  margin-bottom: 0.5rem;
-}
-.project-card h3{
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.3rem; font-weight: 400; color: var(--ink);
-  margin-bottom: 0.75rem;
-}
-.project-card p{ font-size: 0.85rem; color: var(--muted); line-height: 1.75; margin-bottom: 1.25rem; }
-.project-techs{ display: flex; flex-wrap: wrap; gap: 0.4rem; }
-.p-tech{
-  font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
-  padding: 0.2rem 0.6rem; border: 1px solid var(--border2); color: var(--gold-dark);
-}
+.proj-card.featured .proj-title{ font-size: 1.5rem; }
+.feat-visual{ display: flex; align-items: center; justify-content: center; border: 1px solid var(--line2); background: var(--bg); }
 
 /* CERTS */
-.certs-list{ display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1px; background: var(--border2); border: 1px solid var(--border2); }
-.cert-item{
-  background: var(--cream); padding: 1.75rem;
-  display: flex; flex-direction: column; gap: 0.4rem;
-  transition: background 0.25s;
+.log-list{ border-top: 1px solid var(--line2); }
+.log-row{
+  display: grid; grid-template-columns: 220px 1fr; gap: 2rem;
+  padding: 1.1rem 0; border-bottom: 1px solid var(--line);
+  font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem;
 }
-.cert-item:hover{ background: var(--cream2); }
-.cert-issuer{ font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
-.cert-name{ font-size: 0.9rem; font-weight: 400; color: var(--ink); line-height: 1.4; }
+.log-row .issuer{ color: var(--amber); }
+.log-row .name{ color: var(--text-dim); }
+.log-row .name::before{ content: '> '; color: var(--text-dim2); }
 
 /* CONTACT */
-.contact-layout{ display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
-.contact-left h2{
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 300;
-  line-height: 1.1; margin-bottom: 1.5rem; color: var(--ink);
-}
-.contact-left h2 em{ font-style: italic; color: var(--gold-dark); }
-.contact-left p{ color: var(--muted); font-size: 0.9rem; margin-bottom: 2.5rem; line-height: 1.8; }
-.contact-links{ display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--border2); }
-.contact-link{
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 1.1rem 0; border-bottom: 1px solid var(--border);
-  text-decoration: none; color: var(--ink);
-  transition: color 0.2s;
-}
-.contact-link:hover{ color: var(--gold-dark); }
-.cl-label{ font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.2rem; }
-.cl-val{ font-size: 0.9rem; }
-.cl-arrow{ color: var(--gold); font-size: 0.9rem; }
-.contact-right{
-  background: var(--cream2); border: 1px solid var(--border2);
-  padding: 3rem; text-align: center;
-}
-.contact-right .big-initial{
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 8rem; font-weight: 300; line-height: 1;
-  color: var(--gold-light); display: block; margin-bottom: 0.5rem;
-}
-.contact-right p{ font-size: 0.85rem; color: var(--muted); margin-bottom: 2rem; line-height: 1.7; }
+.contact-section{ background: var(--panel); }
+.contact-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.contact-left h2{ font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.8rem,4vw,2.8rem); font-weight: 600; margin-bottom: 1.2rem; }
+.contact-left h2 span{ color: var(--amber); }
+.contact-left p{ color: var(--text-dim); font-size: 0.9rem; margin-bottom: 2rem; line-height: 1.8; max-width: 420px; }
+.cmd-block{ background: var(--bg); border: 1px solid var(--line2); padding: 1.6rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.82rem; }
+.cmd-block a{ color: var(--text); text-decoration: none; display: block; margin-bottom: 0.9rem; transition: color 0.2s; }
+.cmd-block a:last-child{ margin-bottom: 0; }
+.cmd-block a:hover{ color: var(--amber); }
+.cmd-block .k{ color: var(--amber); }
 
 /* FOOTER */
 footer{
-  border-top: 1px solid var(--border2);
-  padding: 2.5rem 4rem;
+  border-top: 1px solid var(--line2);
+  padding: 2rem 3rem;
   display: flex; justify-content: space-between; align-items: center;
-  background: var(--cream);
+  font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;
+  color: var(--text-dim2);
 }
-.footer-name{
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1rem; font-weight: 400; color: var(--ink); letter-spacing: 0.05em;
-}
-.footer-copy{ font-size: 0.75rem; color: var(--muted); letter-spacing: 0.08em; }
 
-@media(max-width: 768px){
+@media(max-width: 860px){
   nav{ padding: 0 1.5rem; }
   .nav-links{ display: none; }
+  .hero{ flex-direction: column; padding: 7rem 1.5rem 3rem; gap: 2.5rem; }
+  .terminal{ max-width: 100%; }
   .about-grid{ grid-template-columns: 1fr; }
-  .about-vline{ display: none; }
-  .about-left{ padding-right: 0; }
-  .about-right{ padding-left: 0; padding-top: 2rem; }
-  .stats-row{ grid-template-columns: 1fr 1fr; }
-  .skill-row{ grid-template-columns: 1fr; gap: 0.75rem; }
-  .exp-item{ grid-template-columns: 1fr; gap: 1rem; }
-  .exp-meta{ text-align: left; }
-  .projects-grid{ grid-template-columns: 1fr; }
-  .project-card.featured{ grid-template-columns: 1fr; }
-  .contact-layout{ grid-template-columns: 1fr; gap: 3rem; }
-  footer{ flex-direction: column; gap: 0.75rem; text-align: center; padding: 2rem; }
+  .metrics-row{ grid-template-columns: 1fr 1fr; }
+  .mod-grid{ grid-template-columns: 1fr; }
+  .pipeline{ padding-left: 2rem; }
+  .proj-grid{ grid-template-columns: 1fr; }
+  .proj-card.featured{ grid-template-columns: 1fr; }
+  .contact-grid{ grid-template-columns: 1fr; gap: 2.5rem; }
+  .log-row{ grid-template-columns: 1fr; gap: 0.3rem; }
+  footer{ flex-direction: column; gap: 0.6rem; text-align: center; }
 }
 </style>
 </head>
@@ -374,126 +272,100 @@ footer{
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">W<span>.</span>Amer</div>
+  <div class="nav-logo">wassem<span>@</span>amer<span>:</span>~$</div>
   <div class="nav-links">
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+    <a href="#about">about</a>
+    <a href="#skills">skills</a>
+    <a href="#experience">experience</a>
+    <a href="#projects">projects</a>
+    <a href="#contact">contact</a>
   </div>
-  <div style="display:flex;align-items:center;gap:1.5rem;">
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">☀</button>
-    <a href="mailto:ali1238go@gmail.com" class="nav-cta">Available for Work</a>
-  </div>
+  <div class="nav-status"><span class="status-dot"></span> AVAILABLE</div>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
-  <div>
-    <p class="hero-eyebrow">Data Scientist &nbsp;·&nbsp; AI Automation Specialist</p>
-    <h1>Wasim<br><em>Osama</em> Amer</h1>
-    <p class="hero-title">Turning Data into Intelligence</p>
-    <p class="hero-desc">
-      Building intelligent automation systems and extracting meaningful insights from complex data — where analytical precision meets creative problem-solving.
-    </p>
+  <div class="hero-left">
+    <p class="hero-tag mono">// ai_automation_engineer · data_scientist</p>
+    <h1>Wassem Osama Amer builds systems that <span class="accent">run themselves.</span></h1>
+    <p class="hero-desc">I design end-to-end automation pipelines and machine learning systems — from Playwright-driven extraction and CRM integrations to predictive models and NLP tools — shipping production work that measurably cuts manual effort.</p>
     <div class="hero-btns">
-      <a href="#projects" class="btn-gold">View My Work</a>
-      <a href="#contact" class="btn-ghost">Get in Touch</a>
+      <a href="#projects" class="btn-run">./view-projects</a>
+      <a href="#contact" class="btn-cmd">&gt; contact --new</a>
+    </div>
+  </div>
+  <div class="terminal">
+    <div class="term-bar">
+      <span class="term-dot" style="background:#E8654A;"></span>
+      <span class="term-dot" style="background:#E8C34A;"></span>
+      <span class="term-dot" style="background:#6FCF97;"></span>
+    </div>
+    <div class="term-body">
+      <div class="term-line"><span class="prompt">$</span> whoami<span class="out">Wassem Osama Amer</span></div>
+      <div class="term-line"><span class="prompt">$</span> cat role.txt<span class="out">AI Automation Engineer<br>Data Scientist · Applied AI</span></div>
+      <div class="term-line"><span class="prompt">$</span> status --check<span class="out ok">available_for_work: true<br>based_in: Egypt</span></div>
+      <div class="term-line"><span class="prompt">$</span> education<span class="out">B.Sc. Data Science &amp; AI<br>Elsewedy Univ. of Technology × Amity Dubai<br>expected: 2029</span></div>
     </div>
   </div>
 </div>
 
 <!-- ABOUT -->
 <div id="about" class="section-wrap">
-  <p class="section-eyebrow">About</p>
-  <h2 class="section-h">Crafting <em>Data-Driven</em><br>Solutions</h2>
-  <p class="section-sub">Elsewedy University of Technology &nbsp;·&nbsp; Data Science & AI &nbsp;·&nbsp; Class of 2029</p>
+  <p class="sec-tag mono">01 / about</p>
+  <h2 class="sec-h">Background <span>&amp; context</span></h2>
   <div class="about-grid">
-    <div class="about-left">
-      <p>I am a Data Science & Artificial Intelligence student with a strong foundation in data lifecycle management, statistical modeling, and workflow automation — driven by the belief that well-structured data can transform decisions.</p>
-      <p>My journey spans academia and industry. As the former Founder & CEO of CARETECH, a healthcare AI startup, I experienced building data-driven products from the ground up — from technical architecture to stakeholder communication.</p>
+    <div class="about-col">
+      <span class="log-tag">[log] education + ventures</span>
+      <p>I'm a Data Science &amp; Artificial Intelligence student with a strong foundation in automation engineering, statistical modeling, and workflow orchestration — driven by the belief that well-structured data and well-built pipelines can transform decisions.</p>
+      <p>As the former Founder &amp; CEO of CARETECH, a healthcare AI startup, I built a data-driven product from the ground up — from technical architecture to investor pitches and stakeholder communication.</p>
     </div>
-    <div class="about-vline"></div>
-    <div class="about-right">
-      <p>Currently I serve as a Junior AI Automation Specialist and Data Quality Specialist, where I design Python-based automation pipelines, maintain rigorous data quality standards, and contribute to AI model training workflows.</p>
-      <p>I was also part of organizing IEEE Entrepreneurship Week Egypt 2026 — an experience that deepened my cross-functional collaboration and leadership skills in high-paced environments.</p>
+    <div class="about-col">
+      <span class="log-tag">[log] recent work</span>
+      <p>Most recently, I worked as a Junior AI Automation Specialist, designing Python-based automation pipelines with Playwright and Selenium, integrating REST APIs and LLM-based tools into enterprise workflows, and building ML-ready data pipelines for downstream AI training.</p>
+      <p>I also helped organize IEEE Entrepreneurship Week Egypt 2026 — sharpening my cross-functional collaboration and leadership under fast-paced conditions.</p>
     </div>
   </div>
-  <div class="stats-row">
-    <div class="stat-item">
-      <div class="stat-n">8</div>
-      <div class="stat-l">AI Projects</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-n">2+</div>
-      <div class="stat-l">Years Experience</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-n">5</div>
-      <div class="stat-l">Certifications</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-n">1</div>
-      <div class="stat-l">Startup Founded</div>
-    </div>
+  <div class="metrics-row">
+    <div class="metric"><div class="metric-n">10</div><div class="metric-l mono">PROJECTS_SHIPPED</div></div>
+    <div class="metric"><div class="metric-n">2+</div><div class="metric-l mono">YEARS_EXPERIENCE</div></div>
+    <div class="metric"><div class="metric-n">5</div><div class="metric-l mono">CERTIFICATIONS</div></div>
+    <div class="metric"><div class="metric-n">1</div><div class="metric-l mono">STARTUP_FOUNDED</div></div>
   </div>
 </div>
 
 <!-- SKILLS -->
 <div id="skills" class="skills-section">
-  <div class="section-wrap" style="padding-bottom: 5rem;">
-    <p class="section-eyebrow">Expertise</p>
-    <h2 class="section-h">Skills &amp; <em>Proficiencies</em></h2>
-    <p class="section-sub">Tools and methodologies I work with daily</p>
-    <div>
-      <div class="skill-row">
-        <div class="skill-cat">Data Science</div>
-        <div class="skill-items">
-          <span class="skill-pill">Exploratory Data Analysis</span>
-          <span class="skill-pill">Statistical Modeling</span>
-          <span class="skill-pill">NLP</span>
-          <span class="skill-pill">Large Language Models</span>
-          <span class="skill-pill">Data Preprocessing</span>
-          <span class="skill-pill">Data Quality Assurance</span>
+  <div class="section-wrap" style="padding-bottom:5rem;">
+    <p class="sec-tag mono">02 / stack</p>
+    <h2 class="sec-h">Skills <span>&amp; tooling</span></h2>
+    <div class="mod-grid">
+      <div class="mod-panel">
+        <div class="mod-title">automation_&amp;_mlops</div>
+        <div class="tag-row">
+          <span class="tag">RPA</span><span class="tag">Selenium</span><span class="tag">Playwright</span>
+          <span class="tag">FastAPI</span><span class="tag">Celery</span><span class="tag">Redis</span>
+          <span class="tag">REST APIs</span><span class="tag">vTiger CRM</span><span class="tag">GCP</span>
         </div>
       </div>
-      <div class="skill-row">
-        <div class="skill-cat">Programming</div>
-        <div class="skill-items">
-          <span class="skill-pill">Python</span>
-          <span class="skill-pill">SQL</span>
-          <span class="skill-pill">Regular Expressions</span>
+      <div class="mod-panel">
+        <div class="mod-title">data_science_&amp;_ml</div>
+        <div class="tag-row">
+          <span class="tag">Supervised/Unsupervised ML</span><span class="tag">Predictive Analytics</span>
+          <span class="tag">Model Evaluation</span><span class="tag">EDA</span><span class="tag">Feature Engineering</span>
         </div>
       </div>
-      <div class="skill-row">
-        <div class="skill-cat">Visualization</div>
-        <div class="skill-items">
-          <span class="skill-pill">Tableau</span>
-          <span class="skill-pill">Power BI</span>
-          <span class="skill-pill">Streamlit</span>
-          <span class="skill-pill">Matplotlib</span>
-          <span class="skill-pill">Flask</span>
-          <span class="skill-pill">Dashboard Development</span>
+      <div class="mod-panel">
+        <div class="mod-title">nlp_&amp;_llms</div>
+        <div class="tag-row">
+          <span class="tag">Text Classification</span><span class="tag">LLM Integration</span>
+          <span class="tag">Prompt Engineering</span><span class="tag">NER</span><span class="tag">Hugging Face</span>
         </div>
       </div>
-      <div class="skill-row">
-        <div class="skill-cat">Automation</div>
-        <div class="skill-items">
-          <span class="skill-pill">RPA</span>
-          <span class="skill-pill">Selenium</span>
-          <span class="skill-pill">Playwright</span>
-          <span class="skill-pill">API Integration</span>
-          <span class="skill-pill">Data Pipelines</span>
-        </div>
-      </div>
-      <div class="skill-row">
-        <div class="skill-cat">Professional</div>
-        <div class="skill-items">
-          <span class="skill-pill">Agile Project Management</span>
-          <span class="skill-pill">Cross-functional Collaboration</span>
-          <span class="skill-pill">Technical Communication</span>
-          <span class="skill-pill">Attention to Detail</span>
+      <div class="mod-panel">
+        <div class="mod-title">programming_&amp;_viz</div>
+        <div class="tag-row">
+          <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Regex</span>
+          <span class="tag">Pandas</span><span class="tag">Tableau</span><span class="tag">Power BI</span><span class="tag">Streamlit</span>
         </div>
       </div>
     </div>
@@ -502,208 +374,160 @@ footer{
 
 <!-- EXPERIENCE -->
 <div id="experience" class="section-wrap">
-  <p class="section-eyebrow">Career</p>
-  <h2 class="section-h">Work <em>Experience</em></h2>
-  <p class="section-sub">Professional roles and responsibilities</p>
-  <div>
-    <div class="exp-item">
-      <div class="exp-meta">
-        <div class="exp-date">Mar 2026 – Present</div>
-        <div class="exp-company">Outsourcing Skill</div>
-      </div>
-      <div>
-        <div class="exp-title">Junior AI Automation Specialist</div>
-        <ul class="exp-bullets">
-          <li>Design and deploy Python-based automated data workflows, continuously improving analytical methodologies and reducing manual processing time.</li>
-          <li>Extract, clean, and format unstructured data from multiple sources to ensure integrity and readiness for downstream AI model training.</li>
-          <li>Optimize system architectures and data pipelines to enhance operational efficiency and seamless enterprise connectivity.</li>
-        </ul>
-      </div>
+  <p class="sec-tag mono">03 / timeline</p>
+  <h2 class="sec-h">Work <span>experience</span></h2>
+  <div class="pipeline">
+    <div class="node">
+      <div class="node-dot active"></div>
+      <div class="node-date mono">MAR 2026 – AUG 2026</div>
+      <div class="node-company mono">outsourcing_skill</div>
+      <div class="node-title">Junior AI Automation Specialist</div>
+      <ul class="node-bullets">
+        <li>Designed and deployed end-to-end automation pipelines with Playwright and Selenium, eliminating manual processing overhead across analytical workflows.</li>
+        <li>Optimized data-pipeline architecture and REST API integrations, improving throughput and reducing latency across enterprise applications.</li>
+        <li>Integrated LLM-based semantic search into automation workflows, extending capability beyond rule-based processing.</li>
+      </ul>
     </div>
-    <div class="exp-item">
-      <div class="exp-meta">
-        <div class="exp-date">Dec 2024 – Oct 2025</div>
-        <div class="exp-company">CARETECH</div>
-      </div>
-      <div>
-        <div class="exp-title">Founder &amp; Chief Executive Officer</div>
-        <ul class="exp-bullets">
-          <li>Led strategic vision and technical roadmap for a healthcare startup focused on innovative, data-driven AI solutions.</li>
-          <li>Collaborated with technical and non-technical stakeholders to present complex architectures and business models clearly.</li>
-          <li>Oversaw end-to-end project delivery, ensuring scalable solutions aligned with industry needs and market demands.</li>
-        </ul>
-      </div>
+    <div class="node">
+      <div class="node-dot"></div>
+      <div class="node-date mono">DEC 2024 – OCT 2025</div>
+      <div class="node-company mono">caretech</div>
+      <div class="node-title">Founder &amp; Chief Executive Officer</div>
+      <ul class="node-bullets">
+        <li>Led product and technical strategy for a healthcare AI startup, architecting the pipeline from ingestion through ML-based diagnostics to reporting.</li>
+        <li>Pitched technical architecture and business models to investors, securing buy-in while running the venture part-time.</li>
+      </ul>
     </div>
-    <div class="exp-item">
-      <div class="exp-meta">
-        <div class="exp-date">Oct 2024 – Mar 2025</div>
-        <div class="exp-company">Waste Connections</div>
-      </div>
-      <div>
-        <div class="exp-title">Checker / Data Quality Specialist</div>
-        <ul class="exp-bullets">
-          <li>Review and verify daily data entries with meticulous attention to detail, maintaining the highest standards of data quality at every stage.</li>
-          <li>Identify anomalies and correct errors promptly to ensure accurate datasets for reporting and operational workflows.</li>
-        </ul>
-      </div>
+    <div class="node">
+      <div class="node-dot"></div>
+      <div class="node-date mono">OCT 2024 – MAR 2025</div>
+      <div class="node-company mono">waste_connections</div>
+      <div class="node-title">Checker / Data Quality Specialist</div>
+      <ul class="node-bullets">
+        <li>Audited high-volume daily data entries for accuracy, correcting systematic errors that reduced downstream reporting mistakes.</li>
+        <li>Built lightweight Python scripts to semi-automate validation checks, accelerating QA review cycles.</li>
+      </ul>
     </div>
   </div>
 </div>
 
 <!-- PROJECTS -->
-<div id="projects" style="background: var(--cream2);">
+<div id="projects" style="background: var(--panel);">
   <div class="section-wrap">
-    <p class="section-eyebrow">Portfolio</p>
-    <h2 class="section-h">Selected <em>Projects</em></h2>
-    <p class="section-sub">Data & AI solutions built with purpose</p>
-    <div class="projects-grid">
-      <div class="project-card">
-        <div class="project-num">01</div>
-        <h3>Egyptian Job Market Insights</h3>
-        <p>A Python-based data pipeline engineered to collect and analyze hiring trends, in-demand skills, and salary benchmarks from professional networks — delivering actionable EDA reports.</p>
-        <div class="project-techs">
-          <span class="p-tech">Python</span><span class="p-tech">EDA</span><span class="p-tech">Data Pipeline</span>
-        </div>
-      </div>
-      <div class="project-card">
-        <div class="project-num">02</div>
-        <h3>AI Email Parser</h3>
-        <p>A high-accuracy data extraction system leveraging NLP and Regular Expressions to parse unstructured emails and automatically structure critical information with flawless integrity.</p>
-        <div class="project-techs">
-          <span class="p-tech">NLP</span><span class="p-tech">Python</span><span class="p-tech">Regex</span>
-        </div>
-      </div>
-      <div class="project-card">
-        <div class="project-num">03</div>
-        <h3>Automation Dashboard</h3>
-        <p>A real-time monitoring dashboard presenting system health, task logs, and efficiency metrics — enabling stakeholders to make rapid, data-driven decisions on system uptime and errors.</p>
-        <div class="project-techs">
-          <span class="p-tech">Streamlit</span><span class="p-tech">Matplotlib</span><span class="p-tech">Data Viz</span>
-        </div>
-      </div>
-      <div class="project-card">
-        <div class="project-num">04</div>
-        <h3>Smart Expense Manager</h3>
-        <p>A Python application for local data handling, expense categorization, and budgeting visualization — implementing statistical logic for financial tracking and clear summary generation.</p>
-        <div class="project-techs">
-          <span class="p-tech">Python</span><span class="p-tech">Statistics</span><span class="p-tech">Data Modeling</span>
-        </div>
-      </div>
-      <div class="project-card featured">
+    <p class="sec-tag mono">04 / projects</p>
+    <h2 class="sec-h">Selected <span>builds</span></h2>
+    <div class="proj-grid">
+
+      <div class="proj-card featured">
         <div>
-          <span class="featured-badge">★ Featured Project</span>
-          <div class="project-num">05</div>
-          <h3>Customer Churn Predictor</h3>
-          <p>A machine learning classification model trained on customer behavioral data to predict churn probability. Features include feature engineering, SMOTE for class balancing, and an interactive Streamlit dashboard for business teams.</p>
-          <div class="project-techs">
-            <span class="p-tech">Python</span><span class="p-tech">Scikit-learn</span><span class="p-tech">Streamlit</span><span class="p-tech">SMOTE</span><span class="p-tech">ML</span>
+          <div class="proj-head"><div class="proj-title">OS Precision Audit — Enterprise QA System</div><span class="proj-status">PRODUCTION</span></div>
+          <div class="proj-metric">80 REPORTS/MO · 100% MANUAL REVIEW ELIMINATED · TEAM: 6</div>
+          <p class="proj-desc">A production QA/RCA automation system used daily by a 6-member Quality team. Built with scalable async processing via Celery and Redis for concurrent analysis without blocking the UI, deployed on a GCP-hosted Ubuntu server, and integrated with Google Drive API via Service Accounts for secure enterprise storage.</p>
+          <div class="proj-techs">
+            <span class="p-tech">Celery</span><span class="p-tech">Redis</span><span class="p-tech">GCP</span><span class="p-tech">Streamlit</span><span class="p-tech">Google Drive API</span>
           </div>
         </div>
-        <div class="featured-visual">
-          <svg width="180" height="140" viewBox="0 0 180 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="10" y="80" width="20" height="50" fill="var(--gold)" opacity="0.4"/>
-            <rect x="40" y="55" width="20" height="75" fill="var(--gold)" opacity="0.55"/>
-            <rect x="70" y="35" width="20" height="95" fill="var(--gold)" opacity="0.7"/>
-            <rect x="100" y="20" width="20" height="110" fill="var(--gold)" opacity="0.85"/>
-            <rect x="130" y="40" width="20" height="90" fill="var(--gold)" opacity="0.6"/>
-            <line x1="10" y1="130" x2="170" y2="130" stroke="var(--gold)" stroke-width="1" opacity="0.4"/>
-            <polyline points="20,75 50,50 80,30 110,18 140,35" fill="none" stroke="var(--gold-dark)" stroke-width="2"/>
-            <circle cx="110" cy="18" r="4" fill="var(--gold-dark)"/>
+        <div class="feat-visual">
+          <svg width="200" height="150" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+            <line x1="20" y1="20" x2="20" y2="130" stroke="var(--line2)" stroke-width="1"/>
+            <line x1="20" y1="130" x2="180" y2="130" stroke="var(--line2)" stroke-width="1"/>
+            <rect x="35" y="90" width="16" height="40" fill="var(--amber)" opacity="0.4"/>
+            <rect x="60" y="70" width="16" height="60" fill="var(--amber)" opacity="0.55"/>
+            <rect x="85" y="45" width="16" height="85" fill="var(--amber)" opacity="0.7"/>
+            <rect x="110" y="60" width="16" height="70" fill="var(--amber)" opacity="0.6"/>
+            <rect x="135" y="30" width="16" height="100" fill="var(--amber)" opacity="0.85"/>
+            <rect x="160" y="50" width="16" height="80" fill="var(--amber)" opacity="0.5"/>
           </svg>
         </div>
       </div>
-      <div class="project-card">
-        <div class="project-num">06</div>
-        <h3>Arabic Sentiment Analyzer</h3>
-        <p>An NLP pipeline fine-tuned for Arabic text sentiment classification on social media data. Handles dialectal variations and outputs polarity scores with a visual breakdown per category.</p>
-        <div class="project-techs">
-          <span class="p-tech">NLP</span><span class="p-tech">Arabic</span><span class="p-tech">Python</span>
-        </div>
+
+      <div class="proj-card">
+        <div class="proj-head"><div class="proj-title">CRM Sync &amp; Status Resolution</div><span class="proj-status">PRODUCTION</span></div>
+        <div class="proj-metric">100% EXECUTION SUCCESS RATE</div>
+        <p class="proj-desc">Synchronizes lead and agent data between Google Sheets and vTiger CRM via REST APIs. Includes a 2-stage RegEx status-resolution algorithm and a datetime-delta matching algorithm to resolve duplicate-record conflicts.</p>
+        <div class="proj-techs"><span class="p-tech">Python</span><span class="p-tech">vTiger</span><span class="p-tech">REST APIs</span><span class="p-tech">Regex</span></div>
       </div>
-      <div class="project-card">
-        <div class="project-num">07</div>
-        <h3>Web Scraping Automation Suite</h3>
-        <p>A modular scraping framework built with Playwright and Selenium to extract structured data from dynamic websites at scale — with built-in scheduling, retry logic, and CSV/JSON export.</p>
-        <div class="project-techs">
-          <span class="p-tech">Playwright</span><span class="p-tech">Selenium</span><span class="p-tech">RPA</span>
-        </div>
+
+      <div class="proj-card">
+        <div class="proj-head"><div class="proj-title">Egyptian Job Market Insights</div><span class="proj-status">DEPLOYED</span></div>
+        <p class="proj-desc">A Python-based data pipeline collecting and analyzing hiring trends, in-demand skills, and salary benchmarks from professional networks — delivering actionable EDA reports.</p>
+        <div class="proj-techs"><span class="p-tech">Python</span><span class="p-tech">EDA</span><span class="p-tech">Pipeline</span></div>
       </div>
-      <div class="project-card">
-        <div class="project-num">08</div>
-        <h3>Healthcare Data Quality Pipeline</h3>
-        <p>An automated data validation and cleansing pipeline designed for healthcare datasets — detecting missing values, outliers, and schema violations, then generating audit reports for compliance teams.</p>
-        <div class="project-techs">
-          <span class="p-tech">Python</span><span class="p-tech">SQL</span><span class="p-tech">Data Quality</span>
-        </div>
+
+      <div class="proj-card">
+        <div class="proj-head"><div class="proj-title">AI Email Parser</div><span class="proj-status">DEPLOYED</span></div>
+        <div class="proj-metric">99%+ ACCURACY · -80% MANUAL ENTRY</div>
+        <p class="proj-desc">Production-grade NLP/Regex extraction system structuring critical fields from unstructured emails.</p>
+        <div class="proj-techs"><span class="p-tech">NLP</span><span class="p-tech">Python</span><span class="p-tech">Regex</span></div>
       </div>
+
+      <div class="proj-card">
+        <div class="proj-head"><div class="proj-title">Customer Churn Predictor</div><span class="proj-status">DEPLOYED</span></div>
+        <div class="proj-metric">87% ACCURACY</div>
+        <p class="proj-desc">Random Forest + XGBoost classifier with SMOTE for class imbalance and GridSearchCV tuning, deployed via an interactive Streamlit dashboard.</p>
+        <div class="proj-techs"><span class="p-tech">Scikit-learn</span><span class="p-tech">SMOTE</span><span class="p-tech">Streamlit</span></div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-head"><div class="proj-title">Arabic Sentiment Analyzer</div><span class="proj-status">DEPLOYED</span></div>
+        <div class="proj-metric">F1 = 0.82 · 3 CLASSES</div>
+        <p class="proj-desc">Fine-tuned AraBERT transformer for Arabic dialect sentiment classification, exposed via a Flask REST API.</p>
+        <div class="proj-techs"><span class="p-tech">AraBERT</span><span class="p-tech">NLP</span><span class="p-tech">Flask</span></div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-head"><div class="proj-title">Automation Dashboard</div><span class="proj-status">DEPLOYED</span></div>
+        <p class="proj-desc">Real-time monitoring dashboard for system health, task logs, and efficiency metrics — enabling rapid, data-driven decisions.</p>
+        <div class="proj-techs"><span class="p-tech">Streamlit</span><span class="p-tech">Matplotlib</span></div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-head"><div class="proj-title">Smart Expense Manager</div><span class="proj-status">DEPLOYED</span></div>
+        <p class="proj-desc">Python application for local data handling, expense categorization, and budgeting visualization with statistical tracking logic.</p>
+        <div class="proj-techs"><span class="p-tech">Python</span><span class="p-tech">Statistics</span></div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-head"><div class="proj-title">Web Scraping Automation Suite</div><span class="proj-status">DEPLOYED</span></div>
+        <p class="proj-desc">Modular scraping framework built with Playwright and Selenium — scheduling, retry logic, and CSV/JSON export at scale.</p>
+        <div class="proj-techs"><span class="p-tech">Playwright</span><span class="p-tech">Selenium</span><span class="p-tech">RPA</span></div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-head"><div class="proj-title">Healthcare Data Quality Pipeline</div><span class="proj-status">DEPLOYED</span></div>
+        <p class="proj-desc">Automated validation and cleansing pipeline for healthcare datasets — detecting anomalies and generating compliance audit reports.</p>
+        <div class="proj-techs"><span class="p-tech">Python</span><span class="p-tech">SQL</span></div>
+      </div>
+
     </div>
   </div>
 </div>
 
-<!-- CERTIFICATIONS -->
+<!-- CERTS -->
 <div class="section-wrap">
-  <p class="section-eyebrow">Credentials</p>
-  <h2 class="section-h">Certifications &amp; <em>Learning</em></h2>
-  <p class="section-sub">Continuous professional development</p>
-  <div class="certs-list">
-    <div class="cert-item">
-      <div class="cert-issuer">IBM / Cognitive Class</div>
-      <div class="cert-name">Fundamentals of AI Agents</div>
-    </div>
-    <div class="cert-item">
-      <div class="cert-issuer">HP LIFE</div>
-      <div class="cert-name">Data Science &amp; Analytics</div>
-    </div>
-    <div class="cert-item">
-      <div class="cert-issuer">HP LIFE</div>
-      <div class="cert-name">Critical Thinking in the Age of AI</div>
-    </div>
-    <div class="cert-item">
-      <div class="cert-issuer">HP LIFE</div>
-      <div class="cert-name">Agile Project Management</div>
-    </div>
-    <div class="cert-item">
-      <div class="cert-issuer">HP LIFE</div>
-      <div class="cert-name">Professional Communication for Career Growth</div>
-    </div>
+  <p class="sec-tag mono">05 / credentials</p>
+  <h2 class="sec-h">Certifications <span>&amp; training</span></h2>
+  <div class="log-list">
+    <div class="log-row"><div class="issuer">IBM / Cognitive Class</div><div class="name">Fundamentals of AI Agents</div></div>
+    <div class="log-row"><div class="issuer">HP LIFE</div><div class="name">Data Science &amp; Analytics</div></div>
+    <div class="log-row"><div class="issuer">HP LIFE</div><div class="name">Critical Thinking in the Age of AI</div></div>
+    <div class="log-row"><div class="issuer">HP LIFE</div><div class="name">Agile Project Management</div></div>
+    <div class="log-row"><div class="issuer">HP LIFE</div><div class="name">Professional Communication for Career Growth</div></div>
   </div>
 </div>
 
 <!-- CONTACT -->
-<div id="contact" style="background: var(--cream2);">
+<div id="contact" class="contact-section">
   <div class="section-wrap">
-    <div class="contact-layout">
+    <div class="contact-grid">
       <div class="contact-left">
-        <h2>Let's Work <em>Together</em></h2>
-        <p>Open to data science roles, AI automation projects, research collaborations, and meaningful conversations about technology and its impact.</p>
-        <div class="contact-links">
-          <a href="mailto:ali1238go@gmail.com" class="contact-link">
-            <div>
-              <div class="cl-label">Email</div>
-              <div class="cl-val">ali1238go@gmail.com</div>
-            </div>
-            <span class="cl-arrow">→</span>
-          </a>
-          <a href="https://linkedin.com/in/wassem-amer" target="_blank" class="contact-link">
-            <div>
-              <div class="cl-label">LinkedIn</div>
-              <div class="cl-val">linkedin.com/in/wassem-amer</div>
-            </div>
-            <span class="cl-arrow">→</span>
-          </a>
-          <a href="https://github.com/Was5em" target="_blank" class="contact-link">
-            <div>
-              <div class="cl-label">GitHub</div>
-              <div class="cl-val">github.com/Was5em</div>
-            </div>
-            <span class="cl-arrow">→</span>
-          </a>
-        </div>
+        <h2>Let's <span>connect()</span></h2>
+        <p>Open to AI automation engineering roles, data science projects, research collaborations, and conversations about building systems that scale.</p>
       </div>
-      <div class="contact-right">
-        <span class="big-initial">W</span>
-        <p>Available for remote &amp; on-site opportunities</p>
-        <a href="mailto:ali1238go@gmail.com" class="btn-gold">Send a Message</a>
+      <div class="cmd-block">
+        <a href="mailto:ali1238go@gmail.com"><span class="k">email</span> → ali1238go@gmail.com</a>
+        <a href="https://linkedin.com/in/wassem-amer" target="_blank"><span class="k">linkedin</span> → linkedin.com/in/wassem-amer</a>
+        <a href="https://github.com/Was5em" target="_blank"><span class="k">github</span> → github.com/Was5em</a>
       </div>
     </div>
   </div>
@@ -711,21 +535,9 @@ footer{
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-name">Wasim Osama Amer &nbsp;·&nbsp; Data Scientist</div>
-  <div class="footer-copy">© 2026 &nbsp;·&nbsp; Egypt 🇪🇬</div>
+  <div>wassem_osama_amer // ai_automation_engineer + data_scientist</div>
+  <div>build 2026.09 · egy</div>
 </footer>
 
-<script>
-const btn = document.getElementById('themeToggle');
-const html = document.documentElement;
-const saved = localStorage.getItem('theme');
-if(saved){ html.setAttribute('data-theme', saved); btn.textContent = saved==='dark' ? '☀' : '☾'; }
-btn.addEventListener('click', () => {
-  const isDark = html.getAttribute('data-theme') === 'dark';
-  html.setAttribute('data-theme', isDark ? 'light' : 'dark');
-  btn.textContent = isDark ? '☾' : '☀';
-  localStorage.setItem('theme', isDark ? 'light' : 'dark');
-});
-</script>
 </body>
 </html>
